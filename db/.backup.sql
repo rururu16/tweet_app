@@ -1,0 +1,12 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY);
+INSERT INTO schema_migrations VALUES('20180805091604');
+CREATE TABLE IF NOT EXISTS "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+INSERT INTO ar_internal_metadata VALUES('environment','development','2018-08-05 08:18:42.670327','2018-08-05 08:18:42.670327');
+CREATE TABLE IF NOT EXISTS "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+INSERT INTO posts VALUES(1,'aaa','2018-08-05 09:19:13.822910','2018-08-05 09:19:13.822910');
+INSERT INTO posts VALUES(2,'rururu','2018-08-05 09:41:30.944933','2018-08-05 09:41:30.944933');
+DELETE FROM sqlite_sequence;
+INSERT INTO sqlite_sequence VALUES('posts',2);
+COMMIT;
