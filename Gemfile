@@ -26,3 +26,7 @@ group :development, :test do
   gem 'spring-watcher-listen', '2.0.1'
   gem 'rspec-rails', '3.5.1'
 end
+
+group :production do
+  gem 'pg', '0.20.0'
+end
