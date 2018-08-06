@@ -45,21 +45,21 @@ module ControllerGeneratorPatch
     end
 end
 
-module ActionView::Helpers::AssetTagHelper
-  def stylesheet_link_tag(*sources)
-    options = sources.extract_options!.stringify_keys
-    path_options = options.extract!('protocol').symbolize_keys
+# module ActionView::Helpers::AssetTagHelper
+#   def stylesheet_link_tag(*sources)
+#     options = sources.extract_options!.stringify_keys
+#     path_options = options.extract!('protocol').symbolize_keys
 
-    sources.uniq.map { |source|
-      tag_options = {
-        "rel" => "stylesheet",
-        "media" => "screen",
-        "href" => path_to_stylesheet(source, path_options) + '&instanceId=6d9567937015&containerPort=3000&languageName=rails5&locale=ja'
-      }.merge!(options)
-      tag(:link, tag_options)
-    }.join("\n").html_safe
-  end
-end
+#     sources.uniq.map { |source|
+#       tag_options = {
+#         "rel" => "stylesheet",
+#         "media" => "screen",
+#         "href" => path_to_stylesheet(source, path_options) + '&instanceId=6d9567937015&containerPort=3000&languageName=rails5&locale=ja'
+#       }.merge!(options)
+#       tag(:link, tag_options)
+#     }.join("\n").html_safe
+#   end
+# end
 
 class ActionController::Base
   prepend RedirectPatch
