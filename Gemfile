@@ -14,6 +14,7 @@ gem 'jquery-rails', '4.2.2'
 gem 'turbolinks', '5.0.1'
 gem 'bcrypt', '3.1.11'
 
+
 gem 'web-console', '3.4.0', group: :development
 
 group :development, :test do
@@ -29,4 +30,6 @@ end
 
 group :production do
   gem 'pg', '0.20.0'
+ gem 'rails_12factor'
 end
+
